@@ -17,7 +17,7 @@ namespace Goodcatch\U9WS;
  */
 class U9WS
 {
-    public function __construct(array $config)
+    public function __construct (array $config)
     {
 
     }
