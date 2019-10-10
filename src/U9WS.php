@@ -11,14 +11,37 @@
 
 namespace Goodcatch\U9WS;
 
+use SoapClient;
+use SoapFault;
+
 /**
  * Class U9WS
  * @package Goodcatch\U9WS
  */
 class U9WS
 {
+
+    private $client;
+    private $functions;
+
     public function __construct (array $config)
     {
+        try
+        {
+            $wsdl = printf ($config ['WSDL'], $config ['Host']);
+            $this->client = new SoapClient ($wsdl);
+
+            $this->functions = $this->client->__getFunctions();
+        } catch (SoapFault $e) {
+            echo $e->getMessage();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function test (array $param) {
+
+        return $this->client->get($param);
 
     }
 }

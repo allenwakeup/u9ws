@@ -19,7 +19,7 @@ return [
     */
 
     'Host' => env('U9_HOST', 'localhost'),
-    'WSDL' => env('U9_WSDL', 'http://localhost/U9/CUSTService/UFIDA.U9.CUST.HY.DSOSV.DSOSV.IDSOSV.svc'),
+    'WSDL' => env('U9_WSDL', 'http://%s/U9/CUSTService/UFIDA.U9.CUST.HY.DSOSV.DSOSV.IDSOSV.svc'),
 
 
 
